@@ -1,5 +1,7 @@
 import pytest
 import pydfcrypto.crypto.crypto as crypto
+import pydfcrypto.crypto.encrypt as enc
+import pydfcrypto.crypto.decrypt as dec
 import tests.dummy_data as dd
 import os
 import glob
@@ -21,17 +23,17 @@ def cipher(key):
 
 @pytest.fixture
 def df_enc(df_0, cipher):
-    df_enc = crypto.dfencrypt(df_0, cipher)
+    df_enc = enc.dfencrypt(df_0, cipher)
     return df_enc
 
 @pytest.fixture
 def df_enc_bytes(df_0, cipher):
-    df_enc_bytes = crypto.dfencrypt(df_0, cipher, as_bytes = True)
+    df_enc_bytes = enc.dfencrypt(df_0, cipher, as_bytes = True)
     return df_enc_bytes
 
 @pytest.fixture
 def df_dec(df_enc, cipher):
-    df_dec = crypto.dfdecrypt(df_enc, cipher)
+    df_dec = dec.dfdecrypt(df_enc, cipher)
     return df_dec
 
 @pytest.fixture

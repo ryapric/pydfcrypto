@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import pydfcrypto.fileops.helpers as dfh
+import pydfcrypto.fileops.fileops as fileops
 import sys
 
 def main():
     for i in sys.argv:
-        dfh.decrypt_file(i)
+        fileops.decrypt_file(i, cipher)
 
 if __name__ == '__main__':
     main()

@@ -1,5 +1,7 @@
 import pytest
 import pydfcrypto.crypto.crypto as crypto
+import pydfcrypto.crypto.encrypt as enc
+import pydfcrypto.crypto.decrypt as dec
 import tests.dummy_data as dd
 
 def test_generate_key(key):
